@@ -1,4 +1,4 @@
-import React, { ChangeEvent, MouseEvent, useState } from "react";
+import React, { ChangeEvent, MouseEvent } from "react";
 
 interface Props {
   onClick: (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => void;
