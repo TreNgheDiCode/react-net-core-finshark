@@ -14,7 +14,7 @@ const Search: React.FC<Props> = ({
   return (
     <div>
       <input value={search} onChange={(e) => handleChange(e)} />
-      <button onClick={(e) => onClick(e)} />
+      <button onClick={(e) => onClick(e)} >Tìm kiếm</button>
     </div>
   );
 };
