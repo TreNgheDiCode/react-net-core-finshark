@@ -1,21 +1,22 @@
-import React, { ChangeEvent, MouseEvent } from "react";
+import React, { ChangeEvent, SyntheticEvent } from "react";
 
 interface Props {
-  onClick: (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => void;
+  onSearchSubmit: (e: SyntheticEvent) => void;
   search: string | undefined;
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleSearchChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Search: React.FC<Props> = ({
-  onClick,
+  onSearchSubmit,
   search,
-  handleChange,
+  handleSearchChange,
 }: Props): JSX.Element => {
   return (
-    <div>
-      <input value={search} onChange={(e) => handleChange(e)} />
-      <button onClick={(e) => onClick(e)} >Tìm kiếm</button>
-    </div>
+    <>
+      <form onSubmit={onSearchSubmit}>
+        <input value={search} onChange={handleSearchChange} />
+      </form>
+    </>
   );
 };
 
