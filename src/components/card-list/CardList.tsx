@@ -14,7 +14,7 @@ const CardList: React.FC<Props> = ({
   onPortfolioCreate,
 }: Props): JSX.Element => {
   return (
-    <>
+    <div>
       {searchResults.length > 0 ? (
         searchResults.map((result) => {
           return (
@@ -27,9 +27,11 @@ const CardList: React.FC<Props> = ({
           );
         })
       ) : (
-        <h1>Không có kết quả</h1>
+        <p className="mb-3 mt-3 text-xl font-semibold text-center md:text-xl">
+          Không có kết quả!
+        </p>
       )}
-    </>
+    </div>
   );
 };
 
