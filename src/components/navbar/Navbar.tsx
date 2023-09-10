@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "./logo.png";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 interface Props {}
 
@@ -9,15 +10,22 @@ const Navbar = (props: Props) => {
     <nav className="relative container mx-auto p-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-20">
-          <img src={logo} alt="" />
-          <div className="hidden font-bold lg:flex">
-            <a href="." className="text-black hover:text-darkBlue">
+          <Link to={"/"}>
+            <img src={logo} alt="" />
+          </Link>
+          <div className="hidden font-bold lg:flex gap-x-4">
+            <Link to={"/"} className="text-black hover:text-darkBlue">
               Tổng quan
-            </a>
+            </Link>
+            <Link to={"/search"} className="text-black hover:text-darkBlue">
+              Tìm kiếm
+            </Link>
           </div>
         </div>
         <div className="hidden lg:flex items-center space-x-6 text-black">
-          <div className="hover:text-darkBlue">Đăng nhập</div>
+          <a href="." className="hover:text-darkBlue">
+            Đăng nhập
+          </a>
           <a
             href="."
             className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
